@@ -1,8 +1,10 @@
 package git_abc;
 
-public class Demo2 {
+import org.testng.annotations.Test;
 
-	public static void main(String[] args) {
+public class Demo2 {
+    @Test
+	public void abc() {
 	System.out.println("SARIKA");
 
 	}
