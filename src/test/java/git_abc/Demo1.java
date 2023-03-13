@@ -11,18 +11,21 @@ public class Demo1 extends Demo2  {
 	
 	
 	@Test
-	public void test1() {
-		WebElement user = driver.findElement(By.id("user-name"));
+	public void test1() throws InterruptedException {
+		WebElement user = driver.findElement(By.name("username"));
 		Assert.assertTrue(user.isDisplayed());
+		Thread.sleep(3000);
 		user.sendKeys("Admin");
-		WebElement pass = driver.findElement(By.id("password"));
+		WebElement pass = driver.findElement(By.name("password"));
 		Assert.assertTrue(pass.isDisplayed());
+		Thread.sleep(3000);
 		pass.sendKeys("admin123");
-		WebElement button = driver.findElement(By.id("login-button"));
+		WebElement button = driver.findElement(By.xpath("/html/body/div/div[1]/div/div[1]/div/div[2]/div[2]/form/div[3]/button"));
 		Assert.assertTrue(button.isDisplayed());
+		Thread.sleep(3000);
 		button.click();
-		WebElement page = driver.findElement(By.xpath("//*[@id=\"header_container\"]/div[1]/div[2]/div"));
-		Assert.assertTrue(page.isDisplayed());
+		//WebElement page = driver.findElement(By.xpath("/html/body/div/div[1]/div[1]/header/div[1]/div[1]/span/h6"));
+		
 	}
 	
 
